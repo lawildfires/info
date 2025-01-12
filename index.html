@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA WILDFIRES INFO</title>
+    <meta name="description" content="Informational resources for the LA Wildfires"/>
+    <style>        
+
+        /* General resets and typography */
+        body, p, a, b, u, .navbar-link, .footer, nav, .container, .column {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem; /* Use rem units for consistent scaling */
+            line-height: 1.5;
+            font-family: Helvetica, sans-serif;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 1rem; /* 1rem = 1rem */
+        }
+
+        a:hover {
+            color: yellow;
+            background-color: red;
+        }
+
+        #darkModeLink:hover {
+            color: inherit;
+            background-color: transparent;
+        }
+
+        /* Light & Dark Mode Styles */
+        body {
+            text-transform: uppercase;
+        }
+
+        body.light {
+            background-color: #fff;
+            color: #000;
+        }
+
+        body.dark {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            gap: 20px;
+            padding: 1rem;
+            justify-content: flex-start;
+            background-color: #fff;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        body.dark nav {
+            background-color: #000;
+            color: white;
+        }
+
+        /* Container and Column Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            background-color: #ffffff;
+            color: black;
+            text-align: left;
+        }
+
+        body.dark .footer {
+            background-color: #000;
+            color: white;
+        }
+
+        /* Dark Mode Link Animation */
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        #darkModeLink {
+            animation: blink 4s infinite;
+        }
+
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            .footer {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+ 
+            .footer {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+    </style>
+</head>
+<body class="light">
+    <nav>
+        <a href="https://lawildfires.info" class="navbar-link"><b>LA Wildfires Info</b></a>
+        <div id="datetime"></div>
+        <a href="#" id="darkModeLink">switch to dark mode</a>
+    </nav>
+
+    <div class="container">
+        <div class="column">
+            <p><b id="linksHeader"><u>LINKS</u></b></p>
+            <p><a href="https://docs.google.com/spreadsheets/u/1/d/1KMk34XY5dsvVJjAoD2mQUVHYU_Ib6COz6jcGH5uJWDY/htmlview" target="blank">Mutual Aid LA Fire & Wind Storm Resources</a></p>
+            <p><a href="https://docs.google.com/spreadsheets/u/1/d/1KMk34XY5dsvVJjAoD2mQUVHYU_Ib6COz6jcGH5uJWDY/htmlview" target="blank">Volunteer Opportunities</a></p>
+            <p><a href="https://docs.google.com/spreadsheets/d/10Sn4cddIIvFTHQIv-Bi5oENadPTKLCRyUqBjkb16EBI/htmlview" target="blank">The Kindness Hub (LA RESOURCE AID TRACKER)</a></p>
+            <p><a href="https://iqconnect.house.gov" target="blank">Disaster Assistance</a></p>
+            <p><a href="https://www.fire.ca.gov/incidents" target="blank">CAL FIRE Incidents Page</a></p>
+            <p><a href="https://www.airnow.gov/" target="blank">Local Air Quality</a></p>
+            <p><a href="https://www.youtube.com/watch?v=5VkVoxx4ExI" target="blank">FOX 11 LA Wildfire Updates</a></p>
+            <p><a href="https://www.redcross.org/get-help/disaster-relief-and-recovery-services/contact-and-locate-loved-ones/california-wildfires-reunification.html" target="blank">Wildfire Reunification (Red Cross)</a></p>
+            <p><a href="https://lafd.org/alerts" target="blank">LA Fire Dept Alerts</a></p>
+            <p><a href="https://ktla.com/news/california/wildfires/" target="blank">KTLA - California Wildfires</a></p>
+        </div>
+
+        <div class="column">
+            <p><b id="donationsHeader"><u>DONATE</u></b></p>
+            <p><a href="https://supportlafd.kindful.com" target="blank">LA Fire Department Foundation</a></p>
+            <p><a href="https://linktr.ee/eatonfire" target="blank">GoFundMe(s) for Affected Residents</a></p>
+            <p><a href="https://hcb.hackclub.com/donations/start/malan" target="blank">Mutual Aid LA Network</a></p>
+            <p><a href="https://gofund.me/4bbe9b26" target="blank">Support iO & Patty in Eaton Fire Loss
+</a></p>            
+            <p><a href="" target="blank"></a></p>
+            <p><a href="" target="blank"></a></p>
+
+
+        </div>
+    </div>
+
+   <!-- <footer class="footer">Website by <a href="https://instagram.com/yungethernet" target="blank">@YUNGETHERNET</a> 
+    </footer> -->
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeLink = document.getElementById('darkModeLink');
+        darkModeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.toggle('dark');
+            darkModeLink.textContent = document.body.classList.contains('dark') ? "Switch to Light Mode" : "Switch to Dark Mode";
+        });
+
+        // Update DateTime to show Los Angeles time
+        function updateDateTime() {
+            const options = {
+                timeZone: "America/Los_Angeles",  
+                year: 'numeric', month: 'short', day: 'numeric',
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+            };
+            const currentDateTime = new Date().toLocaleString('en-US', options);
+            document.getElementById('datetime').textContent = currentDateTime;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>
+            
